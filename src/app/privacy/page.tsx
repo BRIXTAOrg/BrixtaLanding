@@ -37,9 +37,6 @@ export default function PrivacyPage() {
           <p className="text-sm leading-relaxed">
             <strong className="text-slate-300">Immediate Deletion:</strong> Vector data is immediately wiped from our servers the moment it is successfully downloaded by the user.
           </p>
-          <p className="text-sm leading-relaxed">
-            <strong className="text-slate-300">60-Day Expiration:</strong> Any remaining undownloaded vectors are systematically cleared from our databases after 60 days.
-          </p>
         </section>
       </div>
     </div>

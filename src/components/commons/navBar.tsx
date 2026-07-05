@@ -49,9 +49,8 @@ export default function NavBar() {
         {/* Right: Glowing Blue CTA Button */}
         <div>
           <button className="relative inline-flex items-center justify-center px-5 py-2 text-sm font-semibold text-white bg-blue-600 rounded-full group overflow-hidden transition-all duration-300 hover:bg-blue-500 shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_25px_rgba(56,189,248,0.6)] cursor-pointer">
-            {/* Subtle inner reflective animation glow */}
             <span className="absolute inset-0 w-full h-full bg-linear-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
-            Start Now
+            Sign In
           </button>
         </div>
 
