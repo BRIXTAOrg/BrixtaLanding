@@ -3,6 +3,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import NavBar from "@/components/commons/navBar";
+import Link from "next/link";
 
 interface Star {
     id: number;
@@ -218,15 +219,22 @@ export default function LandingPage() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto">
-                        <button className="w-full sm:w-auto px-8 py-4 bg-white text-slate-950 font-bold rounded-lg shadow-xl hover:bg-slate-100 transition-all duration-200 cursor-pointer">
+                        <Link
+                            href="/dashboard"
+                            className="w-full sm:w-auto px-8 py-4 bg-white text-slate-950 font-bold rounded-lg shadow-xl hover:bg-slate-100 transition-all duration-200 text-center cursor-pointer"
+                        >
                             Upload & Embed Now
-                        </button>
-                        <button className="w-full sm:w-auto px-8 py-4 bg-slate-950/80 text-white font-semibold rounded-lg border border-slate-800 backdrop-blur-md hover:bg-slate-900 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer">
+                        </Link>
+
+                        <Link
+                            href="/docs"
+                            className="w-full sm:w-auto px-8 py-4 bg-slate-950/80 text-white font-semibold rounded-lg border border-slate-800 backdrop-blur-md hover:bg-slate-900 transition-all duration-200 flex items-center justify-center gap-2 text-center cursor-pointer"
+                        >
                             Goto Docs
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                             </svg>
-                        </button>
+                        </Link>
                     </div>
 
                     <div className="mt-20 pt-10 border-t border-slate-900 w-full grid grid-cols-3 gap-6 max-w-xl mx-auto">
@@ -272,8 +280,8 @@ export default function LandingPage() {
                                         setProgress(0);
                                     }}
                                     className={`group relative rounded-xl border p-6 text-left transition-all duration-300 cursor-pointer overflow-hidden ${isOpen
-                                            ? "border-slate-800 bg-slate-900/40 backdrop-blur-md shadow-lg"
-                                            : "border-transparent bg-transparent hover:bg-slate-900/20"
+                                        ? "border-slate-800 bg-slate-900/40 backdrop-blur-md shadow-lg"
+                                        : "border-transparent bg-transparent hover:bg-slate-900/20"
                                         }`}
                                 >
                                     {/* Subtle Loading Progress Bar along the bottom of the active option */}

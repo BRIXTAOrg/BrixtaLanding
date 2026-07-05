@@ -1,1 +1,0 @@
-// src/components/sharedEmbedUI/embeddings.tsx
