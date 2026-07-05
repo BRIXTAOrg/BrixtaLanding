@@ -219,7 +219,7 @@ export default function LandingPage() {
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto">
                         <button className="w-full sm:w-auto px-8 py-4 bg-white text-slate-950 font-bold rounded-lg shadow-xl hover:bg-slate-100 transition-all duration-200 cursor-pointer">
-                            Embed Now
+                            Upload & Embed Now
                         </button>
                         <button className="w-full sm:w-auto px-8 py-4 bg-slate-950/80 text-white font-semibold rounded-lg border border-slate-800 backdrop-blur-md hover:bg-slate-900 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer">
                             Goto Docs

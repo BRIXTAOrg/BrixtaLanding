@@ -1,0 +1,1 @@
+// src/app/dashboard/platform/embed/page.tsx
