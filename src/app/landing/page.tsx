@@ -4,6 +4,7 @@
 import { useEffect, useState, useRef } from "react";
 import NavBar from "@/components/commons/navBar";
 import CountdownTimer from "@/components/CountdownTimer";
+import ContactForm from "@/components/ContactForm";
 import Link from "next/link";
 
 interface Star {
@@ -162,7 +163,6 @@ export default function LandingPage() {
             <NavBar />
 
             {/* ================= HERO SECTION ================= */}
-            {/* Added systematic top padding (pt-36) and switched to justify-start to entirely prevent collision with the floating fixed navbar */}
             <div className="relative min-h-screen w-full overflow-hidden bg-linear-to-br from-slate-950 via-blue-950/60 to-slate-950 flex flex-col justify-start items-center px-4 sm:px-6 lg:px-8 pt-36 pb-16 border-b border-slate-900">
 
                 {/* Darkened linear Mesh Overlays */}
@@ -206,7 +206,7 @@ export default function LandingPage() {
                 </div>
 
                 {/* Hero Central Layout */}
-                <div className="relative z-10 text-center max-w-4xl mx-auto flex flex-col items-center">
+                <div className="relative z-10 text-center max-w-4xl mx-auto flex flex-col items-center w-full">
 
                     {/* Integrated Platform Launch Countdown Timer */}
                     <div className="flex flex-col items-center mb-4">
@@ -223,30 +223,52 @@ export default function LandingPage() {
                         </span>
                     </h1>
 
-                    <p className="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto mb-12 font-normal leading-relaxed">
+                    <p className="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto mb-10 font-normal leading-relaxed">
                         Deploy, manage, and query production-grade embeddings instantly. <span className="text-white font-medium">Brixta Systems</span> bridges the gap between raw unstructured data and powerful semantic search architectures.
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto">
+                    {/* Interactive Action Hub (CTA + Early Access) */}
+                    <div className="w-full max-w-lg mx-auto space-y-6">
+
+                        {/* Primary CTA */}
                         <Link
                             href="/dashboard"
-                            className="w-full sm:w-auto px-8 py-4 bg-white text-slate-950 font-bold rounded-lg shadow-xl hover:bg-slate-100 transition-all duration-200 text-center cursor-pointer"
+                            className="block w-full px-8 py-4 bg-white text-slate-950 font-bold rounded-xl shadow-xl hover:bg-slate-100 hover:scale-[1.02] transition-all duration-300 text-center"
                         >
                             Upload & Embed Now
                         </Link>
 
-                        {/* <Link
-                            href="/docs"
-                            className="w-full sm:w-auto px-8 py-4 bg-slate-950/80 text-white font-semibold rounded-lg border border-slate-800 backdrop-blur-md hover:bg-slate-900 transition-all duration-200 flex items-center justify-center gap-2 text-center cursor-pointer"
-                        >
-                            Goto Docs
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                            </svg>
-                        </Link> */}
+                        {/* Early Access Card */}
+                        <div className="relative overflow-hidden rounded-2xl border border-slate-800/70 bg-slate-900/50 backdrop-blur-xl p-6">
+
+                            {/* Background Glow */}
+                            <div className="absolute inset-0 bg-linear-to-r from-cyan-500/5 via-blue-500/5 to-indigo-500/5 pointer-events-none" />
+
+                            <div className="relative">
+
+                                {/* Badge */}
+                                <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-cyan-300">
+                                    ✦ Private Beta
+                                </div>
+
+                                <h3 className="mt-4 text-xl font-bold text-white">
+                                    Get Early Access
+                                </h3>
+
+                                <p className="mt-2 text-sm leading-relaxed text-slate-400">
+                                    Be among the first teams to deploy production-grade vector
+                                    infrastructure before our public launch.
+                                </p>
+
+                                <div className="mt-6">
+                                    <ContactForm />
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
 
-                    <div className="mt-20 pt-10 border-t border-slate-900 w-full grid grid-cols-3 gap-6 max-w-xl mx-auto">
+                    <div className="mt-16 pt-10 border-t border-slate-900 w-full grid grid-cols-3 gap-6 max-w-xl mx-auto">
                         <div className="text-center">
                             <div className="text-lg font-bold text-white font-mono">&lt; 12ms</div>
                             <div className="text-xs text-slate-500 font-sans tracking-widest uppercase mt-1">Latency</div>

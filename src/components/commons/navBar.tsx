@@ -22,6 +22,7 @@ export default function NavBar() {
               alt="Brixta Systems Logo"
               fill
               className="object-cover"
+              sizes="40px"
               priority
             />
           </div>

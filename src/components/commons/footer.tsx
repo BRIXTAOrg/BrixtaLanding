@@ -22,6 +22,7 @@ export default function Footer() {
                 alt="Brixta Systems Logo"
                 fill
                 className="object-cover"
+                sizes="40px"
               />
             </div>
             <span className="text-white font-bold text-lg tracking-tight">
