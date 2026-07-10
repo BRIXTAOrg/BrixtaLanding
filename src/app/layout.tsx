@@ -18,6 +18,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Brixta Systems",
   description: "Vectorizing Systems by Brixta",
+  icons: {
+    icon: "/brixta.ico",
+  },
 };
 
 export default function RootLayout({

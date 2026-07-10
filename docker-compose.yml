@@ -1,0 +1,9 @@
+services:
+  brixtaembedlanding:
+    # Use your Docker image name here
+    image: goswamirohit/brixtaembedlanding:v1
+    container_name: brixtaembedlanding
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+      

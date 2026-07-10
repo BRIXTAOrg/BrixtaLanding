@@ -3,6 +3,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import NavBar from "@/components/commons/navBar";
+import CountdownTimer from "@/components/CountdownTimer";
 import Link from "next/link";
 
 interface Star {
@@ -117,7 +118,6 @@ export default function LandingPage() {
         const timer = setInterval(() => {
             setProgress((prev) => {
                 if (prev >= 100) {
-                    // Transition to next index
                     const currentIndex = useCasesData.findIndex((c) => c.id === activeCase);
                     const nextIndex = (currentIndex + 1) % useCasesData.length;
                     setActiveCase(useCasesData[nextIndex].id);
@@ -162,7 +162,8 @@ export default function LandingPage() {
             <NavBar />
 
             {/* ================= HERO SECTION ================= */}
-            <div className="relative min-h-screen w-full overflow-hidden bg-linear-to-br from-slate-950 via-blue-950/60 to-slate-950 flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 border-b border-slate-900">
+            {/* Added systematic top padding (pt-36) and switched to justify-start to entirely prevent collision with the floating fixed navbar */}
+            <div className="relative min-h-screen w-full overflow-hidden bg-linear-to-br from-slate-950 via-blue-950/60 to-slate-950 flex flex-col justify-start items-center px-4 sm:px-6 lg:px-8 pt-36 pb-16 border-b border-slate-900">
 
                 {/* Darkened linear Mesh Overlays */}
                 <div className="absolute inset-0 z-0 mix-blend-screen opacity-20 pointer-events-none">
@@ -207,6 +208,14 @@ export default function LandingPage() {
                 {/* Hero Central Layout */}
                 <div className="relative z-10 text-center max-w-4xl mx-auto flex flex-col items-center">
 
+                    {/* Integrated Platform Launch Countdown Timer */}
+                    <div className="flex flex-col items-center mb-4">
+                        <div className="text-[10px] font-mono tracking-widest uppercase text-cyan-400 font-semibold bg-cyan-950/30 px-3 py-1 rounded-full border border-cyan-800/40 shadow-inner">
+                            Brixta Production Mesh Launch Countdown
+                        </div>
+                        <CountdownTimer />
+                    </div>
+
                     <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6">
                         Vector Embeddings <br />
                         <span className="bg-clip-text text-transparent bg-linear-to-r from-cyan-300 via-blue-400 to-indigo-400">
@@ -226,7 +235,7 @@ export default function LandingPage() {
                             Upload & Embed Now
                         </Link>
 
-                        <Link
+                        {/* <Link
                             href="/docs"
                             className="w-full sm:w-auto px-8 py-4 bg-slate-950/80 text-white font-semibold rounded-lg border border-slate-800 backdrop-blur-md hover:bg-slate-900 transition-all duration-200 flex items-center justify-center gap-2 text-center cursor-pointer"
                         >
@@ -234,7 +243,7 @@ export default function LandingPage() {
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                             </svg>
-                        </Link>
+                        </Link> */}
                     </div>
 
                     <div className="mt-20 pt-10 border-t border-slate-900 w-full grid grid-cols-3 gap-6 max-w-xl mx-auto">
