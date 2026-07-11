@@ -34,10 +34,6 @@ export default function ContactForm() {
     <div className="w-full max-w-xl mx-auto flex flex-col items-center justify-center space-y-4 font-sans">
       {status !== 'success' ? (
         <div className="w-full flex flex-col items-center space-y-3">
-          {/* Launch Badge */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.25em] text-cyan-300">
-            ✦ Private Developer Preview
-          </div>
 
           {/* Heading */}
           <h3 className="text-white text-xl font-bold tracking-tight text-center">
@@ -47,7 +43,7 @@ export default function ContactForm() {
           {/* Description */}
           <p className="max-w-md text-center text-sm leading-relaxed text-slate-400">
             Join the private launch list and we'll notify you the moment Brixta
-            Embeddings goes live. No spam—just one launch notification.
+            Embeddings goes live. Just one launch notification.
           </p>
 
           {/* Pill-shaped unified email entry field */}
