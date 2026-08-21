@@ -17,9 +17,7 @@ COPY . .
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NEXT_PRIVATE_STANDALONE=true
 
-RUN --mount=type=secret,id=FORMINIT_API_KEY \
-    FORMINIT_API_KEY=$(cat /run/secrets/FORMINIT_API_KEY) \
-    npm run build
+RUN npm run build
 
 # Stage 3: Runner (Ultra minimal)
 FROM gcr.io/distroless/nodejs24-debian12 AS runner
