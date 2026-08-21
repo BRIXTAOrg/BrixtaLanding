@@ -40,12 +40,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
   return (
     <div className="min-h-screen w-full bg-slate-950 text-white font-sans">
       {/* ================= HERO ================= */}
-      <div className="relative w-full overflow-hidden bg-linear-to-br from-slate-950 via-slate-900 to-slate-950 border-b border-slate-900 pt-40 pb-20 px-4 sm:px-6 lg:px-8">
-        <div
-          className="absolute top-[-20%] right-[-10%] w-150 h-150 rounded-full blur-[140px] opacity-25 pointer-events-none"
-          style={{ background: accent.glow }}
-        />
-
+      <div className="relative w-full bg-slate-950 border-b border-slate-900 pt-40 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-6">
             <div
@@ -193,15 +188,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
       {/* ================= CTA ================= */}
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-28">
-        <div className="relative rounded-3xl border border-slate-800/80 bg-linear-to-br from-slate-900/60 to-slate-950 p-10 sm:p-14 text-center overflow-hidden">
-          <div
-            className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full blur-[100px] pointer-events-none opacity-25"
-            style={{ background: accent.glow }}
-          />
-          <h2 className="relative text-2xl sm:text-3xl font-bold text-white tracking-tight mb-4">
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/40 p-10 sm:p-14 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-4">
             See {product.shortName} on your own data.
           </h2>
-          <p className="relative text-slate-400 max-w-xl mx-auto mb-8">
+          <p className="text-slate-400 max-w-xl mx-auto mb-8">
             Talk to our team about a walkthrough scoped to your operation, or
             check our pricing to see what tier fits.
           </p>

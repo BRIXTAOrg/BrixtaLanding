@@ -44,14 +44,10 @@ export default function ProductsPage() {
             <Link
               key={product.slug}
               href={`/products/${product.slug}`}
-              className="group relative rounded-2xl border border-slate-800/80 bg-slate-900/30 backdrop-blur-md p-8 flex flex-col overflow-hidden transition-all duration-300 hover:border-slate-700 hover:bg-slate-900/50"
+              className="group rounded-2xl border border-slate-800 bg-slate-900/40 p-8 flex flex-col transition-colors duration-200 hover:border-slate-700 hover:bg-slate-900/70"
             >
               <div
-                className="absolute -top-16 -right-16 w-56 h-56 rounded-full opacity-10 blur-3xl transition-opacity duration-300 group-hover:opacity-20"
-                style={{ background: product.accent.glow }}
-              />
-              <div
-                className={`relative w-12 h-12 rounded-xl flex items-center justify-center bg-linear-to-br ${product.accent.from} ${product.accent.to} shadow-lg`}
+                className={`w-12 h-12 rounded-xl flex items-center justify-center bg-linear-to-br ${product.accent.from} ${product.accent.to}`}
               >
                 <Icon className="w-5 h-5 text-white" />
               </div>
