@@ -1,11 +1,11 @@
 services:
-  brixtaembedlanding:
+  brixtlanding:
     # Use your Docker image name here
-    image: goswamirohit/brixtaembedlanding:v1
-    container_name: brixtaembedlanding
+    image: goswamirohit/brixtalanding:v1
+    container_name: brixtalanding
     restart: unless-stopped
     ports:
-      - "3000:3000"
+      - "55000:3000"
 
     env_file:
       - .env.production

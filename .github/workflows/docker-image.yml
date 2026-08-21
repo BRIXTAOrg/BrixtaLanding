@@ -29,6 +29,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: goswamirohit/brixtaembedlanding:v1
+          tags: goswamirohit/brixtalanding:v1
           secrets: |
             "FORMINIT_API_KEY=${{ secrets.FORMINIT_API_KEY }}"
