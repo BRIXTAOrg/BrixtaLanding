@@ -15,14 +15,23 @@ import {
   Gauge,
   Plus,
 } from "lucide-react";
-import { products } from "@/lib/products";
+import { products, getProductBySlug } from "@/lib/products";
+import FieldForceDemo from "@/components/home/FieldForceDemo";
 
 const productIcons: Record<string, React.ElementType> = {
-  "field-force": Users,
   "vector-embeddings": Database,
   "research-simulator": FlaskConical,
   "geo-mapping": Satellite,
 };
+
+const industries = [
+  "Logistics",
+  "Mining",
+  "Manufacturing",
+  "Construction",
+  "Utilities",
+  "Distribution",
+];
 
 const pillars = [
   {
@@ -49,12 +58,17 @@ const faqs = [
   {
     question: "What does Brixta actually do?",
     answer:
-      "We build automation, data, and R&D software for industries that run on field operations, physical materials, and land — currently four products: Field Force Management, Vector Embedding Infrastructure, an Industrial Research Simulator, and Satellite Geo-Mapping.",
+      "Our flagship product is Field Force, an auto-configurable operations platform for field teams. We also build three more products for data, research, and geospatial teams — Vector Embedding Infrastructure, an Industrial Research Simulator, and Satellite Geo-Mapping.",
+  },
+  {
+    question: "What does 'auto-configurable' mean in Field Force?",
+    answer:
+      "You define your own data model — add a field, remove one, or change its type (text, number, date, timestamp, JSONB) — from a config screen. There's no developer ticket or release cycle; every connected mobile device picks up the change immediately.",
   },
   {
     question: "Do I need to use all four products?",
     answer:
-      "No. Each product is sold and deployed independently. Most customers start with the one product that matches their immediate need and add others later if it makes sense.",
+      "No. Each product is sold and deployed independently. Most customers start with Field Force and add others later if it makes sense.",
   },
   {
     question: "Can we self-host instead of using your cloud?",
@@ -75,98 +89,156 @@ const faqs = [
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const fieldForce = getProductBySlug("field-force")!;
+  const otherProducts = products.filter((p) => p.slug !== "field-force");
 
   return (
     <div className="relative min-h-screen w-full overflow-x-hidden bg-slate-950 text-white font-sans">
       {/* ================= HERO SECTION ================= */}
-      <div className="relative w-full flex flex-col justify-start items-center px-4 sm:px-6 lg:px-8 pt-40 pb-24 border-b border-slate-900">
-        <div className="relative z-10 text-center max-w-4xl mx-auto flex flex-col items-center w-full">
-          <div className="text-[11px] font-mono tracking-widest uppercase text-slate-400 font-semibold bg-slate-900 px-4 py-1.5 rounded-full border border-slate-800 mb-6">
-            IT Solutions &middot; Data Solutions &middot; R&amp;D
+      <div className="relative w-full px-4 sm:px-6 lg:px-8 pt-40 pb-20 border-b border-slate-900">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-14 items-center">
+          <div className="lg:col-span-5">
+            <div className="inline-flex items-center gap-2 text-[11px] font-mono tracking-widest uppercase text-blue-400 font-semibold bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20 mb-6">
+              Brixta Field Force &middot; Flagship product
+            </div>
+
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 leading-[1.08]">
+              Add a field.
+              <br />
+              Watch it appear on every phone.
+            </h1>
+
+            <p className="text-lg text-slate-400 mb-10 leading-relaxed max-w-lg">
+              Field Force is the auto-configurable operations platform behind
+              how field teams track visits, tasks, leave, and TA/DA. Change
+              your data model yourself — no developer, no release cycle — and
+              it&apos;s one of four products{" "}
+              <span className="text-white font-medium">Brixta</span> builds
+              for industries that run on people, materials, and land.
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 mb-14">
+              <Link
+                href="/products/field-force"
+                className="w-full sm:w-auto px-7 py-3.5 bg-white text-slate-950 font-bold rounded-xl hover:bg-slate-100 transition-colors duration-200 text-center"
+              >
+                Explore Field Force
+              </Link>
+              <Link
+                href="/products"
+                className="w-full sm:w-auto px-7 py-3.5 border border-slate-700 text-white font-bold rounded-xl hover:bg-slate-900 transition-colors duration-200 text-center"
+              >
+                All Brixta products
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-3 gap-6 max-w-md pt-8 border-t border-slate-900">
+              {fieldForce.stats.map((stat) => (
+                <div key={stat.label}>
+                  <div className="text-lg font-bold text-white font-mono">{stat.value}</div>
+                  <div className="text-xs text-slate-500 tracking-wide mt-1 leading-snug">{stat.label}</div>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6">
-            Automation and intelligence <br />
-            <span className="text-blue-400">
-              for the industries that build things.
+          <div className="lg:col-span-7">
+            <FieldForceDemo />
+          </div>
+        </div>
+
+        {/* Trusted-by / industry strip */}
+        <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-slate-900">
+          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
+            <span className="text-xs font-mono uppercase tracking-widest text-slate-600 shrink-0">
+              Built for field teams across
             </span>
-          </h1>
-
-          <p className="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto mb-10 font-normal leading-relaxed">
-            <span className="text-white font-medium">Brixta</span>{" "}
-            builds automation, data infrastructure, and research &amp;
-            development software that helps industrial, field-operations,
-            and data-driven teams cut cost and get back to growth.
-          </p>
-
-          <div className="w-full max-w-lg mx-auto flex flex-col sm:flex-row items-center gap-3 justify-center">
-            <Link
-              href="/products"
-              className="w-full sm:w-auto px-8 py-4 bg-white text-slate-950 font-bold rounded-xl hover:bg-slate-100 transition-colors duration-200 text-center"
-            >
-              Explore Products
-            </Link>
-            <Link
-              href="/contact"
-              className="w-full sm:w-auto px-8 py-4 border border-slate-700 text-white font-bold rounded-xl hover:bg-slate-900 transition-colors duration-200 text-center"
-            >
-              Talk to Sales
-            </Link>
-          </div>
-
-          <div className="mt-16 pt-10 border-t border-slate-900 w-full grid grid-cols-3 gap-6 max-w-xl mx-auto">
-            <div className="text-center">
-              <div className="text-lg font-bold text-white font-mono">4</div>
-              <div className="text-xs text-slate-500 font-sans tracking-widest uppercase mt-1">Product lines</div>
-            </div>
-            <div className="text-center">
-              <div className="text-lg font-bold text-white font-mono">99.99%</div>
-              <div className="text-xs text-slate-500 font-sans tracking-widest uppercase mt-1">Platform uptime</div>
-            </div>
-            <div className="text-center">
-              <div className="text-lg font-bold text-white font-mono">24/7</div>
-              <div className="text-xs text-slate-500 font-sans tracking-widest uppercase mt-1">Enterprise support</div>
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+              {industries.map((industry) => (
+                <span key={industry} className="text-sm font-semibold text-slate-500">
+                  {industry}
+                </span>
+              ))}
             </div>
           </div>
         </div>
       </div>
 
-      {/* ================= PRODUCT GRID SECTION ================= */}
+      {/* ================= PRODUCT SECTION (bento) ================= */}
       <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28">
-        <div className="mb-16 max-w-3xl">
+        <div className="mb-12 max-w-3xl">
           <h2 className="text-xs font-bold uppercase tracking-widest text-blue-400 mb-3">What we build</h2>
           <p className="text-3xl sm:text-5xl font-bold tracking-tight text-white">
-            Four product lines. One goal: less manual work, more growth.
+            One flagship product. Three more built the same way.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {products.map((product) => {
+        {/* Featured: Field Force */}
+        <Link
+          href="/products/field-force"
+          className="group relative block rounded-2xl border border-slate-800 bg-slate-900/40 p-8 sm:p-10 mb-6 transition-colors duration-200 hover:border-slate-700 hover:bg-slate-900/70"
+        >
+          <div className="flex flex-col lg:flex-row lg:items-center gap-8">
+            <div className="lg:flex-1">
+              <div className="flex items-center gap-3 mb-4">
+                <div
+                  className={`w-11 h-11 rounded-xl flex items-center justify-center bg-linear-to-br ${fieldForce.accent.from} ${fieldForce.accent.to}`}
+                >
+                  <Users className="w-5 h-5 text-white" />
+                </div>
+                <span className="text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded-full border border-blue-500/20 bg-blue-500/10 text-blue-400">
+                  Flagship
+                </span>
+              </div>
+              <h3 className="text-2xl font-bold text-white tracking-tight mb-3">{fieldForce.name}</h3>
+              <p className="text-slate-400 text-sm leading-relaxed max-w-xl mb-6">
+                {fieldForce.summary}
+              </p>
+              <div className="flex items-center gap-1.5 text-sm font-semibold text-white">
+                Explore {fieldForce.shortName}
+                <ArrowRight className="w-4 h-4 opacity-60 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
+              </div>
+            </div>
+
+            <div className="lg:w-72 shrink-0 grid grid-cols-3 lg:grid-cols-1 gap-3">
+              {fieldForce.stats.map((stat) => (
+                <div key={stat.label} className="rounded-xl border border-slate-800 bg-slate-950/60 px-4 py-3">
+                  <div className="text-base font-bold text-white font-mono">{stat.value}</div>
+                  <div className="text-[11px] text-slate-500 mt-0.5 leading-snug">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Link>
+
+        {/* Other three products */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {otherProducts.map((product) => {
             const Icon = productIcons[product.slug] ?? Database;
             return (
               <Link
                 key={product.slug}
                 href={`/products/${product.slug}`}
-                className="group relative rounded-2xl border border-slate-800 bg-slate-900/40 p-7 flex flex-col transition-colors duration-200 hover:border-slate-700 hover:bg-slate-900/70"
+                className="group relative rounded-2xl border border-slate-800 bg-slate-900/40 p-6 flex flex-col transition-colors duration-200 hover:border-slate-700 hover:bg-slate-900/70"
               >
                 <div
-                  className={`w-11 h-11 rounded-xl flex items-center justify-center bg-linear-to-br ${product.accent.from} ${product.accent.to}`}
+                  className={`w-10 h-10 rounded-lg flex items-center justify-center bg-linear-to-br ${product.accent.from} ${product.accent.to}`}
                 >
-                  <Icon className="w-5 h-5 text-white" />
+                  <Icon className="w-4.5 h-4.5 text-white" />
                 </div>
 
-                <div className={`mt-5 text-xs font-mono uppercase tracking-wider ${product.accent.text}`}>
+                <div className={`mt-4 text-xs font-mono uppercase tracking-wider ${product.accent.text}`}>
                   {product.category}
                 </div>
-                <h3 className="text-xl font-bold text-white mt-2 tracking-tight">
-                  {product.name}
+                <h3 className="text-base font-bold text-white mt-1.5 tracking-tight">
+                  {product.shortName}
                 </h3>
-                <p className="text-slate-400 text-sm leading-relaxed mt-3 mb-6">
+                <p className="text-slate-400 text-sm leading-relaxed mt-2 mb-5">
                   {product.summary}
                 </p>
 
                 <div className="mt-auto flex items-center gap-1.5 text-sm font-semibold text-white">
-                  Explore {product.shortName}
+                  Learn more
                   <ArrowRight className="w-4 h-4 opacity-60 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
                 </div>
               </Link>
