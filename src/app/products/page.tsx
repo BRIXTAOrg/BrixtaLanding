@@ -11,7 +11,7 @@ import {
 import { products } from "@/lib/products";
 
 export const metadata: Metadata = {
-  title: "Products — Brixta",
+  title: "Products | Brixta",
   description:
     "Explore Brixta's four product lines: Field Force Management, Vector Embedding Infrastructure, Industrial Research Simulator, and Satellite Geo-Mapping.",
 };

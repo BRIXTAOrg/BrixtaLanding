@@ -5,7 +5,7 @@ import { Check, ArrowRight } from "lucide-react";
 import { products } from "@/lib/products";
 
 export const metadata: Metadata = {
-  title: "Pricing — Brixta",
+  title: "Pricing | Brixta",
   description:
     "Simple tiers across every Brixta product, with per-product pricing that scales to your team, data volume, or coverage area.",
 };
@@ -72,7 +72,7 @@ export default function PricingPage() {
         <p className="text-slate-400 text-base leading-relaxed">
           Every Brixta product follows the same tier structure below. Actual
           cost depends on the product, your scale, and whether you deploy on
-          our cloud or self-hosted — our team will scope an exact quote with
+          our cloud or self-hosted. Our team will scope an exact quote with
           you.
         </p>
       </div>

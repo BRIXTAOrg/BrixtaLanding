@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Cpu, Database, FlaskConical, Target } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About — Brixta",
+  title: "About | Brixta",
   description:
     "Brixta is an IT solutions, data solutions, and R&D company building automation and cost-reduction software for industrial and field operations teams.",
 };
@@ -32,7 +32,7 @@ const values = [
     icon: Target,
     title: "Cost reduction, measured",
     description:
-      "We aim for outcomes that show up on a P&L: fewer trial batches, fewer field visits, lower inference bills — not vanity metrics.",
+      "We aim for outcomes that show up on a P&L: fewer trial batches, fewer field visits, lower inference bills, not vanity metrics.",
   },
 ];
 
@@ -42,13 +42,13 @@ export default function AboutPage() {
       <div className="max-w-4xl mx-auto text-center mb-20">
         <h1 className="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-4">About Brixta</h1>
         <p className="text-3xl sm:text-5xl font-bold tracking-tight text-white mb-6">
-          IT, data, and R&amp;D — under one roof.
+          IT, data, and R&amp;D, under one roof.
         </p>
         <p className="text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto">
           Brixta is an IT solutions, data solutions, and research &amp;
           development company. We design automation and cost-reduction
           software for industries that run on people in the field, physical
-          materials, and land — the parts of the economy that don&apos;t fit
+          materials, and land: the parts of the economy that don&apos;t fit
           neatly into a generic SaaS template.
         </p>
       </div>

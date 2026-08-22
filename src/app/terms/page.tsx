@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — Brixta",
+  title: "Terms of Service | Brixta",
   description: "Terms of Service for Brixta's products and services.",
 };
 
@@ -17,9 +17,9 @@ export default function TermsPage() {
 
         <p className="text-sm leading-relaxed">
           Welcome to Brixta. By accessing our website or using any Brixta
-          product — including Field Force Management, Vector Embedding
+          product, including Field Force Management, Vector Embedding
           Infrastructure, the Industrial Research Simulator, or the
-          Satellite Geo-Mapping platform — you agree to be bound by these
+          Satellite Geo-Mapping platform, you agree to be bound by these
           Terms of Service.
         </p>
 
@@ -50,7 +50,7 @@ export default function TermsPage() {
           <h2 className="text-lg font-bold text-white tracking-wide">2. Customer Data</h2>
           <p className="text-sm leading-relaxed">
             <strong className="text-slate-300">Ownership:</strong>{" "}You retain ownership of all
-            data you submit to Brixta products — field activity records,
+            data you submit to Brixta products: field activity records,
             source documents and embeddings, formulation inputs, or regions
             of interest for geo-mapping.
           </p>

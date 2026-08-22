@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Brixta — IT, Data & R&D Solutions",
+  title: "Brixta | IT, Data & R&D Solutions",
   description:
     "Brixta builds automation, data, and research & development products that help industries cut cost and focus on growth: field force management, self-hosted vector embeddings, industrial research simulation, and satellite geo-mapping.",
   icons: {

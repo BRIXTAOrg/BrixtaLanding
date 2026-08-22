@@ -51,7 +51,7 @@ export const products: Product[] = [
     summary:
       "A multi-purpose field force application for tracking people, recording visits, assigning tasks, approving leaves, and auto-calculating TA/DA.",
     heroDescription:
-      "Brixta Field Force replaces spreadsheets, phone calls, and paper attendance registers with a single live view of your on-ground team. Track real-time location, log client visits, assign and monitor tasks, route leave approvals, and let travel & dearness allowance calculate itself — accurately, every time.",
+      "Brixta Field Force replaces spreadsheets, phone calls, and paper attendance registers with a single live view of your on-ground team. Track real-time location, log client visits, assign and monitor tasks, route leave approvals, and let travel & dearness allowance calculate itself, accurately, every time.",
     accent: {
       text: "text-amber-400",
       from: "from-amber-500",
@@ -92,7 +92,7 @@ export const products: Product[] = [
       {
         title: "Automated TA/DA Calculation",
         description:
-          "Travel and dearness allowance is computed automatically from logged distance, city-tier rules, and company policy — no manual reimbursement math.",
+          "Travel and dearness allowance is computed automatically from logged distance, city-tier rules, and company policy, with no manual reimbursement math.",
       },
       {
         title: "Manager Dashboards & Reports",
@@ -132,7 +132,7 @@ export const products: Product[] = [
     summary:
       "Production-grade vector embedding infrastructure for cost-reduced AI workflows, deployable on our cloud or entirely inside your own environment.",
     heroDescription:
-      "Brixta's embedding infrastructure turns unstructured documents, logs, and records into production-ready vectors — without the inference bill of general-purpose AI platforms. Run it as a managed API, or deploy the full engine inside your own cloud boundary for zero data egress and predictable, lower cost at scale.",
+      "Brixta's embedding infrastructure turns unstructured documents, logs, and records into production-ready vectors, without the inference bill of general-purpose AI platforms. Run it as a managed API, or deploy the full engine inside your own cloud boundary for zero data egress and predictable, lower cost at scale.",
     accent: {
       text: "text-cyan-400",
       from: "from-cyan-400",
@@ -153,7 +153,7 @@ export const products: Product[] = [
       {
         title: "Self-Hosted Deployment",
         description:
-          "Run the full embedding engine inside your own VPC or on-prem cluster via Docker — nothing leaves your infrastructure.",
+          "Run the full embedding engine inside your own VPC or on-prem cluster via Docker. Nothing leaves your infrastructure.",
       },
       {
         title: "Cost-Optimized Inference",
@@ -199,7 +199,7 @@ export const products: Product[] = [
       },
     ],
     workflow: [
-      { title: "Connect your data", description: "Point Brixta at documents, databases, or APIs — structured or unstructured." },
+      { title: "Connect your data", description: "Point Brixta at documents, databases, or APIs, structured or unstructured." },
       { title: "Embed & index", description: "Choose managed cloud or self-hosted deployment; vectors are generated and indexed automatically." },
       { title: "Query in production", description: "Plug semantic search or retrieval straight into your existing AI workflows." },
     ],
@@ -234,7 +234,7 @@ export const products: Product[] = [
       {
         title: "Formulation Modeling",
         description:
-          "Model raw material blends — clinker, clay, limestone, additives — and simulate resulting chemical and physical properties.",
+          "Model raw material blends (clinker, clay, limestone, additives) and simulate resulting chemical and physical properties.",
       },
       {
         title: "Process Parameter Simulation",
@@ -294,7 +294,7 @@ export const products: Product[] = [
     summary:
       "A satellite-based geo-mapping platform that detects terrain changes to surface new constructions, mining activity, and population growth or de-growth.",
     heroDescription:
-      "Brixta's Geo-Mapping platform continuously analyzes satellite imagery over time to detect meaningful terrain change — new construction, expanding or idle mining sites, and shifting settlement density — turning raw orbital imagery into a change feed your team can act on, without a single field visit.",
+      "Brixta's Geo-Mapping platform continuously analyzes satellite imagery over time to detect meaningful terrain change: new construction, expanding or idle mining sites, and shifting settlement density. It turns raw orbital imagery into a change feed your team can act on, without a single field visit.",
     accent: {
       text: "text-violet-400",
       from: "from-violet-500",
@@ -335,7 +335,7 @@ export const products: Product[] = [
       {
         title: "Custom Region Monitoring",
         description:
-          "Draw any area of interest — a city, a district, a single site — and get change reports scoped exactly to that boundary.",
+          "Draw any area of interest (a city, a district, a single site) and get change reports scoped exactly to that boundary.",
       },
       {
         title: "Exportable Change Reports",
@@ -361,7 +361,7 @@ export const products: Product[] = [
       },
     ],
     workflow: [
-      { title: "Define your area", description: "Draw a region of interest — from a single site to an entire province." },
+      { title: "Define your area", description: "Draw a region of interest, from a single site to an entire province." },
       { title: "Run change detection", description: "The platform compares historical and current satellite passes automatically." },
       { title: "Act on the change feed", description: "Receive scored, categorized change alerts as new imagery comes in." },
     ],

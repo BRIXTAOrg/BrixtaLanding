@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Mail, Clock, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Contact — Brixta",
+  title: "Contact | Brixta",
   description:
     "Get in touch with the Brixta team about Field Force, Vector Embeddings, Research Simulator, or Geo-Mapping.",
 };
@@ -22,7 +22,7 @@ export default function ContactPage() {
         <p className="text-sm text-slate-400 mb-8 leading-relaxed">
           Have a question about Field Force, Vector Embeddings, our Research
           Simulator, or Geo-Mapping? Or just want to talk through a custom
-          use case? Reach out directly — a real person will get back to you.
+          use case? Reach out directly. A real person will get back to you.
         </p>
 
         <a
@@ -50,7 +50,7 @@ export default function ContactPage() {
         </div>
 
         <p className="text-[11px] text-slate-600 mt-8">
-          A structured contact form is coming soon — for now, email is the
+          A structured contact form is coming soon. For now, email is the
           fastest way to reach us.
         </p>
       </div>

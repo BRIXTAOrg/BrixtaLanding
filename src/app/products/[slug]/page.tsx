@@ -21,7 +21,7 @@ export async function generateMetadata({
   const product = getProductBySlug(slug);
   if (!product) return {};
   return {
-    title: `${product.name} — Brixta`,
+    title: `${product.name} | Brixta`,
     description: product.summary,
   };
 }
@@ -101,7 +101,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         <div className="mb-16 max-w-2xl">
           <h2 className={`text-xs font-bold uppercase tracking-widest mb-3 ${accent.text}`}>Capabilities</h2>
           <p className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
-            Everything you need, built in — not bolted on.
+            Everything you need, built in (not bolted on).
           </p>
         </div>
 

@@ -72,7 +72,7 @@ export default function FieldForceDemo() {
       const rows = fieldRowRefs.current;
       const phoneRows = phoneFieldRefs.current;
 
-      // Start hidden (JS-only state — SSR/no-JS fallback shows everything).
+      // Start hidden (JS-only state; SSR/no-JS fallback shows everything).
       gsap.set(rows, { opacity: 0, y: 14 });
       gsap.set(phoneRows, { opacity: 0, y: 10, scale: 0.96 });
 
@@ -100,7 +100,7 @@ export default function FieldForceDemo() {
         "+=0"
       );
 
-      // Ambient "live" pulse on the sync indicator — runs independently, forever.
+      // Ambient "live" pulse on the sync indicator, runs independently, forever.
       gsap.to(liveDotRef.current, {
         opacity: 0.25,
         duration: 0.9,

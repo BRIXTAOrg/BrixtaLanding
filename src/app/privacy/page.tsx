@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Brixta",
+  title: "Privacy Policy | Brixta",
   description: "How Brixta collects, uses, and protects data across its products.",
 };
 
@@ -25,8 +25,8 @@ export default function PrivacyPage() {
           </p>
           <p className="text-sm leading-relaxed">
             <strong className="text-slate-300">Self-Hosted Deployments:</strong>{" "}We do not
-            collect, intercept, or retain any operational data — field
-            activity, embeddings, formulation inputs, or imagery — from
+            collect, intercept, or retain any operational data (field
+            activity, embeddings, formulation inputs, or imagery) from
             customers running self-hosted instances of any Brixta product.
             That data remains entirely within your control.
           </p>
@@ -52,7 +52,7 @@ export default function PrivacyPage() {
           <p className="text-sm leading-relaxed">
             For customers on our managed cloud services, we process the
             operational data required to run the product you&apos;ve
-            subscribed to — for example, field agent location and visit
+            subscribed to, for example field agent location and visit
             logs for Field Force, document content for Vector Embeddings,
             formulation parameters for the Research Simulator, or region
             boundaries for Geo-Mapping.

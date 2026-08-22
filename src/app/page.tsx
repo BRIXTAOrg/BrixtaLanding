@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { products, getProductBySlug } from "@/lib/products";
 import FieldForceDemo from "@/components/home/FieldForceDemo";
+import Testimonials from "@/components/home/Testimonials";
 
 const productIcons: Record<string, React.ElementType> = {
   "vector-embeddings": Database,
@@ -38,19 +39,19 @@ const pillars = [
     icon: Cpu,
     title: "Automation-first",
     description:
-      "We replace manual, error-prone processes with software that runs the workflow for you — from field operations to lab research.",
+      "We replace manual, error-prone processes with software that runs the workflow for you, from field operations to lab research.",
   },
   {
     icon: Gauge,
     title: "Built for cost reduction",
     description:
-      "Every product is engineered to cut operating cost — fewer wasted trial batches, fewer site visits, lower AI inference bills.",
+      "Every product is engineered to cut operating cost: fewer wasted trial batches, fewer site visits, lower AI inference bills.",
   },
   {
     icon: ShieldCheck,
     title: "Deploy your way",
     description:
-      "Managed cloud or fully self-hosted inside your own infrastructure — you choose where your data lives.",
+      "Managed cloud or fully self-hosted inside your own infrastructure. You choose where your data lives.",
   },
 ];
 
@@ -58,12 +59,12 @@ const faqs = [
   {
     question: "What does Brixta actually do?",
     answer:
-      "Our flagship product is Field Force, an auto-configurable operations platform for field teams. We also build three more products for data, research, and geospatial teams — Vector Embedding Infrastructure, an Industrial Research Simulator, and Satellite Geo-Mapping.",
+      "Our flagship product is Field Force, an auto-configurable operations platform for field teams. We also build three more products for data, research, and geospatial teams: Vector Embedding Infrastructure, an Industrial Research Simulator, and Satellite Geo-Mapping.",
   },
   {
     question: "What does 'auto-configurable' mean in Field Force?",
     answer:
-      "You define your own data model — add a field, remove one, or change its type (text, number, date, timestamp, JSONB) — from a config screen. There's no developer ticket or release cycle; every connected mobile device picks up the change immediately.",
+      "You define your own data model: add a field, remove one, or change its type (text, number, date, timestamp, JSONB) from a config screen. There's no developer ticket or release cycle, and every connected mobile device picks up the change immediately.",
   },
   {
     question: "Do I need to use all four products?",
@@ -73,12 +74,12 @@ const faqs = [
   {
     question: "Can we self-host instead of using your cloud?",
     answer:
-      "Yes, for products that support it — most notably Vector Embedding Infrastructure. You can run the full engine inside your own environment with no data leaving your network.",
+      "Yes, for products that support it, most notably Vector Embedding Infrastructure. You can run the full engine inside your own environment with no data leaving your network.",
   },
   {
     question: "How is pricing determined?",
     answer:
-      "Pricing depends on the product and how you use it — for example per field agent, per monitored region, or per simulation seat. See the Pricing page for tiers, or contact us for an exact quote.",
+      "Pricing depends on the product and how you use it, for example per field agent, per monitored region, or per simulation seat. See the Pricing page for tiers, or contact us for an exact quote.",
   },
   {
     question: "Can we get a demo before committing?",
@@ -111,8 +112,8 @@ export default function Home() {
             <p className="text-lg text-slate-400 mb-10 leading-relaxed max-w-lg">
               Field Force is the auto-configurable operations platform behind
               how field teams track visits, tasks, leave, and TA/DA. Change
-              your data model yourself — no developer, no release cycle — and
-              it&apos;s one of four products{" "}
+              your data model yourself, with no developer and no
+              release cycle, and it&apos;s one of four products{" "}
               <span className="text-white font-medium">Brixta</span> builds
               for industries that run on people, materials, and land.
             </p>
@@ -300,7 +301,7 @@ export default function Home() {
           </h2>
           <p className="text-slate-400 max-w-xl mx-auto mb-8">
             Tell us what you&apos;re trying to automate or analyze, and our
-            team will help you map it to the right Brixta product — or scope
+            team will help you map it to the right Brixta product, or scope
             something custom.
           </p>
           <Link
@@ -310,6 +311,51 @@ export default function Home() {
             Contact our team
             <ArrowRight className="w-4 h-4" />
           </Link>
+        </div>
+      </div>
+
+      {/* ================= TESTIMONIALS SECTION ================= */}
+      <div className="relative w-full py-24 border-t border-slate-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+          <h2 className="text-xs font-bold uppercase tracking-widest text-blue-400 mb-3">Testimonials</h2>
+          <p className="text-3xl sm:text-5xl font-bold tracking-tight text-white max-w-2xl">
+            What teams on the ground actually say.
+          </p>
+        </div>
+        <Testimonials />
+      </div>
+
+      {/* ================= TESTIFIED BY SECTION ================= */}
+      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+        <div className="text-center mb-10">
+          <span className="text-xs font-mono uppercase tracking-widest text-slate-600">Testified by</span>
+        </div>
+        <div className="flex flex-wrap items-center justify-center gap-x-16 gap-y-8">
+          <div className="flex items-center gap-3 opacity-80 hover:opacity-100 transition-opacity duration-200">
+            <div className="relative w-11 h-11 rounded-lg overflow-hidden border border-slate-800 shrink-0">
+              <Image
+                src="https://www.bestcement.co.in/wp-content/uploads/2025/03/cropped-WhatsApp-Image-2025-03-22-at-4.22.56-PM-270x270.jpeg"
+                alt="Best Cement logo"
+                fill
+                className="object-cover"
+                sizes="44px"
+              />
+            </div>
+            <span className="text-lg font-bold text-slate-300 tracking-tight">Best Cement</span>
+          </div>
+
+          <div className="flex items-center gap-3 opacity-80 hover:opacity-100 transition-opacity duration-200">
+            <div className="relative w-11 h-11 rounded-lg overflow-hidden border border-slate-800 shrink-0">
+              <Image
+                src="https://www.eurofoam.in/wp-content/uploads/2025/03/cropped-WhatsApp-Image-2025-03-22-at-4.22.56-PM-270x270.jpeg"
+                alt="Eurofoam logo"
+                fill
+                className="object-cover"
+                sizes="44px"
+              />
+            </div>
+            <span className="text-lg font-bold text-slate-300 tracking-tight">Eurofoam</span>
+          </div>
         </div>
       </div>
 

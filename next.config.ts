@@ -13,6 +13,14 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "fastly.picsum.photos",
       },
+      {
+        protocol: "https",
+        hostname: "www.bestcement.co.in",
+      },
+      {
+        protocol: "https",
+        hostname: "www.eurofoam.in",
+      },
     ],
   },
   /* config options here */
