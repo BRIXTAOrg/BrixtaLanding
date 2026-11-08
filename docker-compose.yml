@@ -5,7 +5,7 @@ services:
     container_name: brixtalanding
     restart: unless-stopped
     ports:
-      - "55000:3000"
+      - "55005:3000"
 
     env_file:
       - .env.production
