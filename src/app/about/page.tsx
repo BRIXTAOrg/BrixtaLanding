@@ -1,12 +1,12 @@
-// src/app/about/page.tsx
+
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Cpu, Database, FlaskConical, Target } from "lucide-react";
+import { Cpu, Database, FlaskConical, Target, Building2 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About | Brixta",
   description:
-    "Brixta is an IT solutions, data solutions, and R&D company building automation and cost-reduction software for industrial and field operations teams.",
+    "Brixta Corporation is an IT solutions, data solutions, and R&D company building automation and cost-reduction software for industrial and field operations teams.",
 };
 
 const values = [
@@ -39,11 +39,15 @@ const values = [
 export default function AboutPage() {
   return (
     <div className="min-h-screen w-full bg-slate-950 text-slate-300 font-sans px-4 sm:px-6 lg:px-8 pt-40 pb-24">
-      <div className="max-w-4xl mx-auto text-center mb-20">
-        <h1 className="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-4">About Brixta</h1>
+      <div className="max-w-4xl mx-auto text-center mb-16">
+        <h1 className="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-4">
+          About Brixta
+        </h1>
+
         <p className="text-3xl sm:text-5xl font-bold tracking-tight text-white mb-6">
           IT, data, and R&amp;D, under one roof.
         </p>
+
         <p className="text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto">
           Brixta is an IT solutions, data solutions, and research &amp;
           development company. We design automation and cost-reduction
@@ -53,17 +57,79 @@ export default function AboutPage() {
         </p>
       </div>
 
+      {/* Legal business identity */}
+      <div className="max-w-4xl mx-auto mb-24">
+        <div className="rounded-2xl border border-slate-800/80 bg-slate-900/30 backdrop-blur-md p-6 sm:p-8">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center">
+              <Building2 className="w-5 h-5 text-cyan-400" />
+            </div>
+            <h2 className="text-lg font-bold text-white tracking-tight">
+              Business Information
+            </h2>
+          </div>
+
+          <p className="text-sm text-slate-400 leading-relaxed">
+            Brixta operates as <strong className="text-slate-200">Brixta Corporation</strong>,
+            a partnership firm based in 52, Sundarpur, R.G. Baruah Road, Guwahati, Assam, India 781001. The firm develops and
+            provides technology solutions, data infrastructure, software
+            products, industrial research and development, and geospatial
+            intelligence services for businesses and industrial operations.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6 pt-6 border-t border-slate-800">
+            <div>
+              <p className="text-xs text-slate-500 mb-1">
+                Registered Business Name
+              </p>
+              <p className="text-sm font-semibold text-slate-200">
+                Brixta Corporation
+              </p>
+            </div>
+
+            <div>
+              <p className="text-xs text-slate-500 mb-1">
+                Business Structure
+              </p>
+              <p className="text-sm font-semibold text-slate-200">
+                Partnership Firm
+              </p>
+            </div>
+
+            <div>
+              <p className="text-xs text-slate-500 mb-1">
+                Country of Registration
+              </p>
+              <p className="text-sm font-semibold text-slate-200">
+                India
+              </p>
+            </div>
+
+            <div>
+              <p className="text-xs text-slate-500 mb-1">
+                Operating Region
+              </p>
+              <p className="text-sm font-semibold text-slate-200">
+                Guwahati, Assam, India
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-24">
         <div className="lg:col-span-6 order-2 lg:order-1">
           <h2 className="text-2xl font-bold text-white tracking-tight mb-4">
             What we actually do
           </h2>
+
           <p className="text-slate-400 leading-relaxed mb-4">
             We build four product lines that share one underlying
             philosophy: take a process that&apos;s currently manual,
             expensive, or slow to observe, and give it a software layer that
             makes it automatic, cheaper, or visible in near real time.
           </p>
+
           <p className="text-slate-400 leading-relaxed">
             That shows up as a field force platform that replaces paper
             attendance and manual TA/DA math, a self-hostable vector
@@ -73,6 +139,7 @@ export default function AboutPage() {
             platform that flags terrain change without a site visit.
           </p>
         </div>
+
         <div className="lg:col-span-6 order-1 lg:order-2">
           <div className="relative aspect-4/3 rounded-2xl overflow-hidden border border-slate-800/80 shadow-2xl">
             <Image
@@ -91,6 +158,7 @@ export default function AboutPage() {
         <h2 className="text-2xl font-bold text-white tracking-tight mb-8 text-center">
           How we build
         </h2>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {values.map((value) => (
             <div
@@ -100,8 +168,14 @@ export default function AboutPage() {
               <div className="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center mb-4">
                 <value.icon className="w-4 h-4 text-cyan-400" />
               </div>
-              <h3 className="text-base font-bold text-white mb-2 tracking-tight">{value.title}</h3>
-              <p className="text-sm text-slate-400 leading-relaxed">{value.description}</p>
+
+              <h3 className="text-base font-bold text-white mb-2 tracking-tight">
+                {value.title}
+              </h3>
+
+              <p className="text-sm text-slate-400 leading-relaxed">
+                {value.description}
+              </p>
             </div>
           ))}
         </div>
