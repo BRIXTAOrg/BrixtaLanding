@@ -1,89 +1,74 @@
+// src/app/contact/page.tsx
+"use client";
 
-import type { Metadata } from "next";
-import { Mail, Clock, MapPin, Phone } from "lucide-react";
+import React from "react";
+import { ArrowUpRight, MapPin, Phone, MessageSquare, Mail } from "lucide-react";
 
-export const metadata: Metadata = {
-  title: "Contact | Brixta",
-  description:
-    "Contact Brixta Corporation about Field Force, Vector Embeddings, Research Simulator, or Geo-Mapping.",
-};
+const WHATSAPP_URL =
+  "https://wa.me/917635874931?text=Hi%20Brixta%2C%20I%20would%20like%20to%20book%20a%20free%20engineer%20visit.";
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen w-full bg-slate-950 text-white font-sans px-4 sm:px-6 lg:px-8 pt-40 pb-24 flex justify-center items-start">
-      <div className="max-w-lg w-full border border-slate-900 bg-slate-900/20 backdrop-blur-md rounded-2xl p-8 sm:p-12 text-center shadow-2xl">
-        <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center mx-auto mb-6">
-          <Mail className="w-5 h-5 text-cyan-400" />
+    <main className="min-h-screen bg-[#F5F3EE] text-[#121212] pt-20 pb-28">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center gap-4 pb-6 mb-12 border-b border-[#121212]/15 text-xs font-mono uppercase tracking-[0.2em] text-[#121212]/70">
+          <span>[ DIRECT DESK ]</span>
         </div>
 
-        <h1 className="text-2xl sm:text-3xl font-bold tracking-tight mb-4 text-white">
-          Get in Touch
-        </h1>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div>
+            <h1 className="text-5xl sm:text-7xl font-black tracking-tight uppercase leading-[0.95] mb-6">
+              Let's build <br />
+              <span className="text-[#121212]/40">together.</span>
+            </h1>
+            <p className="text-lg text-[#121212]/75 max-w-md mb-12">
+              Ready to take control of your construction site? Book a free on-site evaluation with our engineers today.
+            </p>
 
-        <p className="text-sm text-slate-400 mb-8 leading-relaxed">
-          Have a question about Field Force, Vector Embeddings, our Research
-          Simulator, or Geo-Mapping? Or just want to talk through a custom
-          use case? Reach out directly. A real person will get back to you.
-        </p>
-
-        <div className="space-y-3">
-          <a
-            href="mailto:connect@brixta.site"
-            className="flex items-center justify-center gap-3 p-4 rounded-xl bg-slate-950/80 border border-slate-800/60 font-mono text-sm sm:text-base text-cyan-400 shadow-inner hover:border-cyan-500/40 transition-colors duration-200"
-          >
-            <Mail className="w-4 h-4 shrink-0" />
-            connect@brixta.site
-          </a>
-
-          <a
-            href="tel:+917635874931"
-            className="flex items-center justify-center gap-3 p-4 rounded-xl bg-slate-950/80 border border-slate-800/60 font-mono text-sm sm:text-base text-cyan-400 shadow-inner hover:border-cyan-500/40 transition-colors duration-200"
-          >
-            <Phone className="w-4 h-4 shrink-0" />
-            +91 76358 74931
-          </a>
-        </div>
-
-        <div className="mt-8 pt-8 border-t border-slate-900 grid grid-cols-2 gap-6 text-left">
-          <div className="flex items-start gap-2.5">
-            <Clock className="w-4 h-4 text-slate-500 mt-0.5 shrink-0" />
-            <div>
-              <div className="text-xs font-semibold text-slate-300">
-                Response time
+            <div className="space-y-8">
+              <div>
+                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#121212]/50 mb-2">
+                  <Phone className="w-4 h-4" /> Direct Phone & WhatsApp
+                </div>
+                <a href="tel:+917635874931" className="block text-2xl font-bold hover:text-[#121212]/70 transition-colors">+91 76358 74931</a>
               </div>
-              <div className="text-xs text-slate-500 mt-0.5">
-                Within 1 business day
+
+              <div>
+                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#121212]/50 mb-2">
+                  <Mail className="w-4 h-4" /> Email
+                </div>
+                <a href="mailto:connect@brixta.site" className="block text-xl font-bold hover:text-[#121212]/70 transition-colors">connect@brixta.site</a>
+              </div>
+
+              <div>
+                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#121212]/50 mb-2">
+                  <MapPin className="w-4 h-4" /> Operations Hub
+                </div>
+                <p className="text-lg font-medium">Guwahati, Assam, India</p>
               </div>
             </div>
           </div>
 
-          <div className="flex items-start gap-2.5">
-            <MapPin className="w-4 h-4 text-slate-500 mt-0.5 shrink-0" />
-            <div>
-              <div className="text-xs font-semibold text-slate-300">
-                Coverage
-              </div>
-              <div className="text-xs text-slate-500 mt-0.5">
-                Assam, India · Global clients
-              </div>
-            </div>
+          <div className="bg-[#121212] p-8 sm:p-12 text-[#F5F3EE] flex flex-col justify-center">
+            <MessageSquare className="w-10 h-10 mb-6 text-[#F5F3EE]/70" />
+            <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight mb-4">
+              Fastest way to reach us
+            </h2>
+            <p className="text-[#F5F3EE]/70 mb-10 text-sm leading-relaxed">
+              Skip the forms. Send us a direct WhatsApp message with your location and current construction stage, and our team will assign an engineer for your free site visit.
+            </p>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-between bg-[#F5F3EE] text-[#121212] px-8 py-5 text-sm font-bold uppercase tracking-[0.15em] hover:bg-[#E2DEC9] transition-colors"
+            >
+              <span>Message on WhatsApp</span>
+              <ArrowUpRight className="w-5 h-5" />
+            </a>
           </div>
         </div>
-
-        <div className="mt-8 pt-6 border-t border-slate-900">
-          <p className="text-xs font-semibold text-slate-300">
-            Brixta Corporation
-          </p>
-          <p className="text-[11px] text-slate-500 mt-1">
-            Technology, Data Solutions & Research and Development
-          </p>
-        </div>
-
-        <p className="text-[11px] text-slate-600 mt-6">
-          A structured contact form is coming soon. For now, email or
-          telephone is the fastest way to reach us.
-        </p>
       </div>
-    </div>
+    </main>
   );
 }

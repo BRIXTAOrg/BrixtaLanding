@@ -4,211 +4,121 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  Users,
-  Database,
-  FlaskConical,
-  Satellite,
-  ArrowRight,
-  Mail,
-  Menu,
-  X,
-  ChevronDown,
-} from "lucide-react";
-import { products } from "@/lib/products";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 
-const productIcons: Record<string, React.ElementType> = {
-  "field-force": Users,
-  "vector-embeddings": Database,
-  "research-simulator": FlaskConical,
-  "geo-mapping": Satellite,
-};
+const WHATSAPP_URL =
+  "https://wa.me/7635874931?text=Hi%20Brixta%2C%20I%20am%20building%20my%20home%20and%20would%20like%20to%20book%20a%20free%20on-site%20engineer%20visit%20and%20estimation.";
 
 export default function NavBar() {
-  const [productsOpen, setProductsOpen] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className="fixed top-6 left-0 right-0 z-50 w-full flex justify-center px-4">
-      <nav
-        className="w-full max-w-4xl bg-slate-950/70 backdrop-blur-xl border border-slate-800/80 rounded-3xl md:rounded-full px-4 sm:px-6 py-3 flex items-center justify-between shadow-2xl shadow-blue-950/20"
-        onMouseLeave={() => setProductsOpen(false)}
-      >
-        {/* Left: Logo */}
-        <Link
-          href="/"
-          className="flex items-center gap-2 hover:scale-102 transition-transform duration-200 select-none cursor-pointer shrink-0"
-        >
-          <div className="relative w-8 h-8 rounded-full overflow-hidden bg-slate-900 border border-slate-800 flex items-center justify-center">
+    <header className="sticky top-0 z-50 w-full bg-[#F5F3EE]/95 backdrop-blur-md border-b border-[#121212]/15">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        {/* Brand Logo */}
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="relative w-9 h-9 bg-[#121212] flex items-center justify-center overflow-hidden">
             <Image
               src="/brixta.webp"
               alt="Brixta Logo"
-              fill
-              className="object-cover"
-              sizes="40px"
-              priority
+              width={28}
+              height={28}
+              className="object-contain"
             />
           </div>
-          <span className="text-sm font-bold tracking-tight text-white hidden sm:inline-block font-sans">
-            Brixta
-          </span>
+          <div className="flex flex-col">
+            <span className="text-xl font-black tracking-tighter text-[#121212] leading-none">
+              BRIXTA
+            </span>
+            <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#121212]/60 mt-0.5">
+              Site & Supply
+            </span>
+          </div>
         </Link>
 
-        {/* Center: Navigation Links (desktop) */}
-        <div className="hidden md:flex items-center gap-1">
-          {/* Products dropdown trigger */}
-          <div
-            className="relative"
-            onMouseEnter={() => setProductsOpen(true)}
-          >
-            <button
-              className={`flex items-center gap-1 text-sm font-medium px-3 py-1.5 rounded-full transition-colors duration-200 cursor-pointer ${
-                productsOpen ? "text-white bg-slate-900" : "text-slate-400 hover:text-white"
-              }`}
-              onClick={() => setProductsOpen((v) => !v)}
-            >
-              Products
-              <ChevronDown
-                className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                  productsOpen ? "rotate-180" : ""
-                }`}
-              />
-            </button>
+        {/* Desktop Links */}
+        <nav className="hidden md:flex items-center gap-8 text-xs font-bold uppercase tracking-[0.15em] text-[#121212]/70">
+          <a href="#the-reality" className="hover:text-[#121212] transition-colors">
+            The Reality
+          </a>
+          <a href="#process" className="hover:text-[#121212] transition-colors">
+            How It Works
+          </a>
+          <a href="#crew-and-supply" className="hover:text-[#121212] transition-colors">
+            Crew & Materials
+          </a>
+          <a href="#business-model" className="hover:text-[#121212] transition-colors">
+            How We Earn
+          </a>
+        </nav>
 
-            {/* Mega menu panel */}
-            <div
-              className={`absolute left-1/2 -translate-x-1/2 top-full pt-4 transition-all duration-200 ${
-                productsOpen
-                  ? "opacity-100 translate-y-0 pointer-events-auto"
-                  : "opacity-0 -translate-y-2 pointer-events-none"
-              }`}
-            >
-              <div className="w-[560px] max-w-[90vw] rounded-2xl border border-slate-800 bg-slate-950/95 backdrop-blur-xl shadow-2xl shadow-black/40 p-3">
-                <div className="grid grid-cols-2 gap-2">
-                  {products.map((product) => {
-                    const Icon = productIcons[product.slug] ?? Database;
-                    return (
-                      <Link
-                        key={product.slug}
-                        href={`/products/${product.slug}`}
-                        onClick={() => setProductsOpen(false)}
-                        className="group flex flex-col gap-2 rounded-xl p-3.5 hover:bg-slate-900 transition-colors duration-150"
-                      >
-                        <div
-                          className={`w-8 h-8 rounded-lg flex items-center justify-center bg-linear-to-br ${product.accent.from} ${product.accent.to}`}
-                        >
-                          <Icon className="w-4 h-4 text-white" />
-                        </div>
-                        <div>
-                          <div className="text-sm font-semibold text-white flex items-center gap-1">
-                            {product.shortName}
-                            <ArrowRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-150" />
-                          </div>
-                          <div className="text-xs text-slate-500 mt-0.5 leading-snug">
-                            {product.category}
-                          </div>
-                        </div>
-                      </Link>
-                    );
-                  })}
-                </div>
-
-                {/* Contact tab within the products card */}
-                <Link
-                  href="/contact"
-                  onClick={() => setProductsOpen(false)}
-                  className="mt-2 flex items-center justify-between rounded-xl p-3.5 bg-slate-900/60 border border-slate-800/80 hover:border-blue-500/40 hover:bg-slate-900 transition-colors duration-150"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-slate-800">
-                      <Mail className="w-4 h-4 text-blue-400" />
-                    </div>
-                    <div>
-                      <div className="text-sm font-semibold text-white">
-                        Not sure which fits?
-                      </div>
-                      <div className="text-xs text-slate-500">
-                        Talk to our team about your use case
-                      </div>
-                    </div>
-                  </div>
-                  <ArrowRight className="w-4 h-4 text-slate-500" />
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          <Link
-            href="/pricing"
-            className="text-sm font-medium text-slate-400 hover:text-white transition-colors duration-200 px-3 py-1.5 rounded-full hover:bg-slate-900"
+        {/* Desktop CTA */}
+        <div className="hidden md:flex items-center gap-4">
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-[#121212] text-[#F5F3EE] px-5 py-3 text-xs font-bold uppercase tracking-[0.15em] hover:bg-[#2B2B2B] transition-colors"
           >
-            Pricing
-          </Link>
-          <Link
-            href="/contact"
-            className="text-sm font-medium text-slate-400 hover:text-white transition-colors duration-200 px-3 py-1.5 rounded-full hover:bg-slate-900"
-          >
-            Contact
-          </Link>
+            <span>Book Free Site Visit</span>
+            <ArrowUpRight className="w-4 h-4" />
+          </a>
         </div>
 
-        {/* Right: CTA (desktop) */}
-        <div className="hidden md:block shrink-0">
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center px-5 py-2 text-sm font-semibold text-white bg-blue-600 rounded-full transition-colors duration-200 hover:bg-blue-500 cursor-pointer"
-          >
-            Get in touch
-          </Link>
-        </div>
-
-        {/* Mobile menu toggle */}
+        {/* Mobile Hamburger */}
         <button
-          className="md:hidden flex items-center justify-center w-9 h-9 rounded-full text-slate-300 hover:bg-slate-900 transition-colors"
-          onClick={() => setMobileOpen((v) => !v)}
-          aria-label="Toggle menu"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="md:hidden p-2 text-[#121212] border border-[#121212]/20"
+          aria-label="Toggle Menu"
         >
-          {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
-      </nav>
+      </div>
 
-      {/* Mobile menu panel */}
-      {mobileOpen && (
-        <div className="md:hidden absolute top-20 left-4 right-4 rounded-2xl border border-slate-800 bg-slate-950/95 backdrop-blur-xl shadow-2xl p-4 space-y-1">
-          <div className="text-xs font-mono uppercase tracking-wider text-slate-600 px-2 pt-1 pb-2">
-            Products
+      {/* Mobile Menu Drawer */}
+      {mobileMenuOpen && (
+        <div className="md:hidden bg-[#F5F3EE] border-b border-[#121212]/15 px-6 py-6 space-y-4">
+          <div className="flex flex-col space-y-3 text-sm font-bold uppercase tracking-wider text-[#121212]">
+            <a
+              href="#the-reality"
+              onClick={() => setMobileMenuOpen(false)}
+              className="py-2 border-b border-[#121212]/10"
+            >
+              01 / The Homebuilder&apos;s Reality
+            </a>
+            <a
+              href="#process"
+              onClick={() => setMobileMenuOpen(false)}
+              className="py-2 border-b border-[#121212]/10"
+            >
+              02 / Free Engineer Visit
+            </a>
+            <a
+              href="#crew-and-supply"
+              onClick={() => setMobileMenuOpen(false)}
+              className="py-2 border-b border-[#121212]/10"
+            >
+              03 / Fixed Crew & Material Supply
+            </a>
+            <a
+              href="#business-model"
+              onClick={() => setMobileMenuOpen(false)}
+              className="py-2 border-b border-[#121212]/10"
+            >
+              04 / How We Earn Money
+            </a>
           </div>
-          {products.map((product) => {
-            const Icon = productIcons[product.slug] ?? Database;
-            return (
-              <Link
-                key={product.slug}
-                href={`/products/${product.slug}`}
-                onClick={() => setMobileOpen(false)}
-                className="flex items-center gap-3 px-2 py-2.5 rounded-lg hover:bg-slate-900 transition-colors"
-              >
-                <Icon className={`w-4 h-4 ${product.accent.text}`} />
-                <span className="text-sm text-slate-200">{product.shortName}</span>
-              </Link>
-            );
-          })}
-          <div className="h-px bg-slate-900 my-2" />
-          <Link
-            href="/pricing"
-            onClick={() => setMobileOpen(false)}
-            className="block px-2 py-2.5 rounded-lg hover:bg-slate-900 text-sm text-slate-200"
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full flex items-center justify-center gap-2 bg-[#121212] text-[#F5F3EE] px-5 py-3.5 text-xs font-bold uppercase tracking-[0.15em]"
           >
-            Pricing
-          </Link>
-          <Link
-            href="/contact"
-            onClick={() => setMobileOpen(false)}
-            className="block px-2 py-2.5 rounded-lg hover:bg-slate-900 text-sm text-slate-200"
-          >
-            Contact
-          </Link>
+            <span>Book Free Visit on WhatsApp</span>
+            <ArrowUpRight className="w-4 h-4" />
+          </a>
         </div>
       )}
-    </div>
+    </header>
   );
 }
